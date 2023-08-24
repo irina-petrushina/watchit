@@ -1,0 +1,287 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Main Page {% endblock %} 
+
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- Hero -->
+    <section class="section section-header text-dark pb-md-8">
+        <div class="container">
+	
+         <div class="row justify-content-center">
+                <div class="col-12 col-md-10 text-center mb-5 mb-md-7"> 
+                    <h1 class="display-2 font-weight-bolder mb-4">WatchIt!</h1>
+                    <p class="lead mb-4 mb-lg-5">Improve your health habits with wearable sensors.</p>
+              	<!--</div>
+                <div class="col-12 col-md-10 justify-content-center">-->
+                    <img class="d-none d-md-inline-block" src="/static/assets/img/watch_yoga.png" alt="Mobile App Mockup">
+                </div>
+        </div> 
+        </div>
+    </section>
+	<section class="section section-lg" id="about">
+        <div class="container">
+            <div class="row justify-content-center mb-5 mb-lg-7">
+                <div class="col-12 col-md-10 text-center">
+                    <!--<h2 class="h1 mb-4">Monitoring your health and working towards better health habits can be complicated!</h2>
+                    <p class="lead">This application will help you navigate through your health metrics and work towards a better version of yourself.</p>-->
+		    <h2 class="h1 mb-4">WatchIt! will help you answer the following questions:</h2>
+                </div>
+            </div>
+            <div class="row row-grid align-items-center mb-5 mb-lg-7">
+                <div class="col-12 col-lg-6">
+                    <!--<h2 class="mb-4">WatchIt! will help you answer following questions:</h2>-->
+                    <h4>How do I know that I'm focusing on the right aspects of my health?</h4>
+                    <br></br>
+		    <h4>How does my fitness level compare with the medical norms and population averages?</h4>
+		    <br></br>
+		    <h4> Which fitness classes are right for me? </h4>
+		    <br></br>
+                    <a href="#tryitnow" class="btn btn-dark mt-3 animate-up-2" style="font-size : 20px;">
+                        Try it now!
+                       <!-- <span class="icon icon-xs ml-2">-->
+                           <!-- <i class="fas fa-external-link-alt"></i>-->
+                        <!--</span>-->
+                    </a>
+                </div>
+                <div class="col-12 col-lg-6 ml-lg-auto">
+                    <img src="/static/assets/img/group_fitness.png" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="section section-lg py-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="card border-0 bg-white text-center p-1">
+                        <div class="card-header bg-white border-0 pb-0">
+                            <div class="icon icon-lg icon-primary mb-4">
+                                <i class="fas fa-heart-pulse"></i>
+                            </div>
+                            <h2 class="h3 text-dark m-0">Your HealthScore</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                WatchIt! HealthScore will reflect your cardiovascular fitness and sleep habits.                  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="card border-0 bg-white text-center p-1">
+                        <div class="card-header bg-white border-0 pb-0">
+                            <div class="icon icon-lg icon-primary mb-4">
+                                <span class="fas fa-map-marked-alt"></span>
+                            </div>
+                            <h2 class="h3 text-dark m-0">CDC statistics</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Compare your HealthScore with the population average and medically approved values for your demographic group.                 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card border-0 bg-white text-center p-1">
+                        <div class="card-header bg-white border-0 pb-0">
+                            <div class="icon icon-lg icon-primary mb-4">
+                                <span class="fa fa-optin-monster"></span>
+                            </div>
+                            <h2 class="h3 text-dark m-0">Fitness class recommendations</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Find local fitness classes that can help you achieve your goals.                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section-lg" id="faq">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-12 text-center mb-4 mb-lg-5">
+                    <h2 class="h1 mb-4">FAQ</h2>
+                  </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                    <!--Accordion-->
+                    <div class="accordion" id="accordionExample">
+                        <div class="card border-light mb-0">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block d-flex justify-content-between text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span class="h4 mb-0 font-weight-bold">Who is this application for?</span>
+                                        <span class="icon"><span class="fas fa-plus"></span></span>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p class="mb-0">
+                                <h6>The primary customers of this application are health-conscious individuals who are interetsted in improving their health habits.</h6> 
+				<br></br>
+				<h6> The application provides the user with their HealthScore and makes recommendations that will allow the user to improve it by providing information about local fitness classes.</h6>
+    
+				</p>                           
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-light mb-0">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block d-flex justify-content-between text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <span class="h4 mb-0 font-weight-bold">Who else can benefit from WatchIt?</span>
+                                        <span class="icon"><span class="fas fa-plus"></span></span>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p class="mb-0">
+                                <h6>Fitness-centers and gyms can directly benefit from this application since it promotes the user engagement with in-person fitness classes.</h6>
+				<br></br> 
+				<h6>In addition, this app can be used by medical professionals to recommend specific activities to patients based on their needs.</h6> 
+    
+				</p>                           
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="card border-light mb-0">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block d-flex justify-content-between text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <span class="h4 mb-0 font-weight-bold">How does WatchIt! work?</span>
+                                        <span class="icon"><span class="fas fa-plus"></span></span>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                        	    
+                <div class="col-12 col-md-10 justify-content-center">
+                    <img class="d-none d-md-inline-block" src="/static/assets/img/flowchart.png" alt="Mobile App Mockup">
+                </div>
+			    </div>
+                            </div>
+                        </div>
+			</div>
+                    <!--End of Accordion-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section section-lg" id = "tryitnow">
+        <div class="container">
+            <div class="row justify-content-center">
+		<div class="col-12 col-md-10 text-center">
+                    <h2 class="h1 mb-4">Let's take a look at your data!</h2>
+                </div>
+                <div class="col-12">
+                    <div class="signin-inner mt-3 mt-lg-0 bg-white shadow border rounded border-light w-100">
+                        <div class="row gx-0 align-items-center justify-content-between">
+                            <div class="col-12 col-lg-5 d-none d-lg-block rounded-left bg-secondary">
+                                <img src="/static/assets/img/fitness_jumprope.png" alt="login image">
+                            </div>
+                            <div class="col-12 col-lg-7 px-3 py-5 px-sm-5 px-md-6">
+                                <div class="text-center text-md-center mb-4 mt-md-0">
+                                    <h2 class="mb-0 h3">
+                                        Upload your Apple Watch data:</h2>
+                                </div>
+                                    <!-- Form -->
+                                    <div class="form-group mb-4">
+                                        <label for="exampleInputEmailCard1">
+	                       <details>
+	                        <summary><!--&#9432;--> How do I export my Apple Watch data?</summary>
+        	                        <p> </p>
+					<p> - Open the Health app on your iPhone.</p> 
+                	                <p> - Click on your profile icon.</p> 
+                        	        <p> - Click on <i> Export All Health Data</i> and follow the promt. </p> 
+                     		   </details>
+
+					
+					</label>
+					<form method="POST" action="/get_watch_data" enctype="multipart/form-data">
+     					 <p><input type="file" name="file"></p>
+     					 <p><input type="submit" value="Submit"></p>
+   					 </form>
+                                    </div>
+					{% with messages = get_flashed_messages() %}
+   					{% if messages %}
+      					{% for message in messages %}
+        				{{ message }}
+     					{% endfor %}
+  					{% endif %}
+					{% endwith %}
+				<form action = "/analyze">
+				<button type = 'submit' class="btn btn-block btn-primary" style="font-size : 20px;"> Analyze! </button>
+				</form>
+                            </div>
+                        </div>
+			<div class="text-center text-md-center mb-4 mt-md-0">
+                        <h5 class="mb-0 h5">
+                          Don't have an Apple Watch, but still want to see WatchIt! in action? </h5>
+				<form action = "/result_preview.html">
+                                <button type = 'submit' class="btn btn-dark mt-3 animate-up-2" style="font-size : 20px;"> Try Demo </button>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+
+    <div class="section bg-soft" id="download">
+        <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+            <svg class="fill-soft" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+            </svg>
+        </figure>
+	<section class="section section-lg" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                <h2 class"h1"><b>Contact</b></h2>
+                <br></br>
+                <h4><b>Irina Petrushina</b><h4>
+                <h4><b>Email:</b> irina.petrushina@mg.thedataincubator.com</h4>
+                <h4><b>GitHub:</b> TBD </h4>
+                <h4><b>Website:</b> TBD </h4>
+                </div>
+                <div class="col">
+                    <img class="d-none d-lg-inline-block" src="/static/assets/img/watch_yoga.png" alt="Mobile App Illustration">
+                </div>
+            </div>
+        </div>
+</section>    
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

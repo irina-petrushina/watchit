@@ -1,0 +1,52 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block title %} Sign IN  {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <section class="min-vh-100 d-flex align-items-center bg-soft">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="signin-inner mt-3 mt-lg-0 bg-white shadow border rounded border-light w-100">
+                        <div class="row gx-0 align-items-center justify-content-between">
+                            <div class="col-12 col-lg-5 d-none d-lg-block rounded-left bg-secondary">
+                                <img src="/static/assets/img/fitness_jumprope.png" alt="login image">
+                            </div>
+                            <div class="col-12 col-lg-7 px-3 py-5 px-sm-5 px-md-6">
+                                <div class="text-center text-md-center mb-4 mt-md-0">
+                                    <h1 class="mb-0 h3">
+                                        Upload your Apple Watch data:</h1>
+                                </div>
+                                <form action="#" class="mt-4">
+                                    <!-- Form -->
+                                    <div class="form-group mb-4">
+                                        <label for="exampleInputEmailCard1">Info: How to export your Apple Watch data.</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1"><span class="fas fa-envelope"></span></span>
+                                            <input type="email" class="form-control" placeholder="example@company.com" id="exampleInputEmailCard1">
+                                        </div>  
+                                    </div>
+                                    <!-- End of Form -->
+				<!--	<form action="https://www.w3docs.com/">
+                                     	 <button type="submit" class="btn btn-block btn-primary">Upload</button>
+                                	</form>-->
+				</form>
+				<form action = "/result_preview.html">
+				<button type = 'submit' class="btn btn-block btn-primary"> Analyze! </button>
+				</form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

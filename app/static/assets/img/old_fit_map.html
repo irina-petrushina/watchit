@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6eb413887479fbcb7dfb12945b7431fb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6eb413887479fbcb7dfb12945b7431fb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6eb413887479fbcb7dfb12945b7431fb = L.map(
+                "map_6eb413887479fbcb7dfb12945b7431fb",
+                {
+                    center: [40.850494748721516, -73.15257286452372],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f22a0abb454785f85dd735538f16b1f9 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_6eb413887479fbcb7dfb12945b7431fb);
+        
+    
+            var marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b = L.markerClusterGroup(
+                {}
+            );
+            map_6eb413887479fbcb7dfb12945b7431fb.addLayer(marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b);
+        
+    
+            var marker_98cfa7363be2419a57a7c86cb3f62f55 = L.marker(
+                [40.856129, -73.153739],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b);
+        
+    
+        var popup_842f8fb6408286dad24eb0f5d869c642 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_0dfd3e25f2b313d919529a0af0c1d188 = $(`<div id="html_0dfd3e25f2b313d919529a0af0c1d188" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/primal-athletics-nesconset?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Primal Athletics</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 5.0 </p>         </div>`)[0];
+                popup_842f8fb6408286dad24eb0f5d869c642.setContent(html_0dfd3e25f2b313d919529a0af0c1d188);
+            
+        
+
+        marker_98cfa7363be2419a57a7c86cb3f62f55.bindPopup(popup_842f8fb6408286dad24eb0f5d869c642)
+        ;
+
+        
+    
+    
+            var marker_d08ffac9f8849cd1fd54453e34682a6a = L.marker(
+                [40.83209, -73.141],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b);
+        
+    
+        var popup_6a459dacf2adbfe7eccc23f6c2947124 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_9a96425c9332c0226caf24a08d409135 = $(`<div id="html_9a96425c9332c0226caf24a08d409135" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/fitness-4-you-nesconset-3?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Fitness 4 You</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 5.0 </p>         </div>`)[0];
+                popup_6a459dacf2adbfe7eccc23f6c2947124.setContent(html_9a96425c9332c0226caf24a08d409135);
+            
+        
+
+        marker_d08ffac9f8849cd1fd54453e34682a6a.bindPopup(popup_6a459dacf2adbfe7eccc23f6c2947124)
+        ;
+
+        
+    
+    
+            var marker_244cb524354115a5691c4b1f7f5c6816 = L.marker(
+                [40.86025, -73.11141],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b);
+        
+    
+        var popup_495faa922ec6a00a949ce067c2cff58b = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_dc0526efc061d947136b606a230124c7 = $(`<div id="html_dc0526efc061d947136b606a230124c7" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/mission-fit-li-lake-grove?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Mission Fit LI</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 5.0 </p>         </div>`)[0];
+                popup_495faa922ec6a00a949ce067c2cff58b.setContent(html_dc0526efc061d947136b606a230124c7);
+            
+        
+
+        marker_244cb524354115a5691c4b1f7f5c6816.bindPopup(popup_495faa922ec6a00a949ce067c2cff58b)
+        ;
+
+        
+    
+    
+            var marker_acd87e0e303977f6fcf81e9e6d82748b = L.marker(
+                [40.8601728, -73.1560677],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b);
+        
+    
+        var popup_94a72d506d9143faf242cc7871f1ada4 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_3931e3253d8edc1071b51b2900ee5958 = $(`<div id="html_3931e3253d8edc1071b51b2900ee5958" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/crossfit-smithtown-st-james?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Crossfit Smithtown</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 5.0 </p>         </div>`)[0];
+                popup_94a72d506d9143faf242cc7871f1ada4.setContent(html_3931e3253d8edc1071b51b2900ee5958);
+            
+        
+
+        marker_acd87e0e303977f6fcf81e9e6d82748b.bindPopup(popup_94a72d506d9143faf242cc7871f1ada4)
+        ;
+
+        
+    
+    
+            var marker_a230493bce1b193e8ac30a0de1a5dc13 = L.marker(
+                [40.854728, -73.191928],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b);
+        
+    
+        var popup_717e99b3619bc38a37456eb406d5ee9c = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_8ecaa97c739a8d0bb0f48e126e3922f2 = $(`<div id="html_8ecaa97c739a8d0bb0f48e126e3922f2" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/orangetheory-fitness-smithtown-smithtown?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Orangetheory Fitness Smithtown</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 5.0 </p>         </div>`)[0];
+                popup_717e99b3619bc38a37456eb406d5ee9c.setContent(html_8ecaa97c739a8d0bb0f48e126e3922f2);
+            
+        
+
+        marker_a230493bce1b193e8ac30a0de1a5dc13.bindPopup(popup_717e99b3619bc38a37456eb406d5ee9c)
+        ;
+
+        
+    
+    
+            var marker_869bd3bdaa956dda61306438c0826394 = L.marker(
+                [40.824831, -73.112003],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b);
+        
+    
+        var popup_6db285569b0821f067a3708b99bcec6b = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_27a1398016e4467a1e0a480b7e2696a7 = $(`<div id="html_27a1398016e4467a1e0a480b7e2696a7" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/be-wild-fitness-lake-ronkonkoma?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Be Wild Fitness</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 5.0 </p>         </div>`)[0];
+                popup_6db285569b0821f067a3708b99bcec6b.setContent(html_27a1398016e4467a1e0a480b7e2696a7);
+            
+        
+
+        marker_869bd3bdaa956dda61306438c0826394.bindPopup(popup_6db285569b0821f067a3708b99bcec6b)
+        ;
+
+        
+    
+    
+            var marker_1960a413cdde62253f1ddf886c3e22b8 = L.marker(
+                [40.8182076112895, -73.1659837838532],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b);
+        
+    
+        var popup_21f875d61c6f9985b73feb3dfa90844a = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_db9b78dadf5dbae58e47edc784b60f17 = $(`<div id="html_db9b78dadf5dbae58e47edc784b60f17" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/the-rinx-health-and-fitness-hauppauge?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">The Rinx Health and Fitness</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 5.0 </p>         </div>`)[0];
+                popup_21f875d61c6f9985b73feb3dfa90844a.setContent(html_db9b78dadf5dbae58e47edc784b60f17);
+            
+        
+
+        marker_1960a413cdde62253f1ddf886c3e22b8.bindPopup(popup_21f875d61c6f9985b73feb3dfa90844a)
+        ;
+
+        
+    
+    
+            var marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03 = L.markerClusterGroup(
+                {}
+            );
+            map_6eb413887479fbcb7dfb12945b7431fb.addLayer(marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03);
+        
+    
+            var marker_535294cb7e481b54381a282b7666a824 = L.marker(
+                [40.81689862, -73.1934052],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03);
+        
+    
+        var popup_529d2e524a929f7b6070d726fccb3d09 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_8a952730598f6c58ec10babd2547b8b4 = $(`<div id="html_8a952730598f6c58ec10babd2547b8b4" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/crunch-fitness-hauppauge-hauppauge-4?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Crunch Fitness - Hauppauge</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 4.5 </p>         </div>`)[0];
+                popup_529d2e524a929f7b6070d726fccb3d09.setContent(html_8a952730598f6c58ec10babd2547b8b4);
+            
+        
+
+        marker_535294cb7e481b54381a282b7666a824.bindPopup(popup_529d2e524a929f7b6070d726fccb3d09)
+        ;
+
+        
+    
+    
+            var marker_10bf7cea4a86fd2aa07f73cccad84165 = L.marker(
+                [40.875032, -73.121756],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03);
+        
+    
+        var popup_680a0d5b31b6731f8ad35f496baed26b = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_52b32830ff131123d476751c7923e165 = $(`<div id="html_52b32830ff131123d476751c7923e165" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/orangetheory-fitness-stony-brook-stony-brook?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Orangetheory Fitness Stony Brook</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 4.5 </p>         </div>`)[0];
+                popup_680a0d5b31b6731f8ad35f496baed26b.setContent(html_52b32830ff131123d476751c7923e165);
+            
+        
+
+        marker_10bf7cea4a86fd2aa07f73cccad84165.bindPopup(popup_680a0d5b31b6731f8ad35f496baed26b)
+        ;
+
+        
+    
+    
+            var marker_a6d5d4b9f547737a34d1d97ffb2d410a = L.marker(
+                [40.8558, -73.19262],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03);
+        
+    
+        var popup_138edccff710327e6f151cbbb6103aaa = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_c037df26abe9822ba95b79f913723f3c = $(`<div id="html_c037df26abe9822ba95b79f913723f3c" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/smithtown-personal-training-and-nutrition-smithtown?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Smithtown Personal Training & Nutrition</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 4.0 </p>         </div>`)[0];
+                popup_138edccff710327e6f151cbbb6103aaa.setContent(html_c037df26abe9822ba95b79f913723f3c);
+            
+        
+
+        marker_a6d5d4b9f547737a34d1d97ffb2d410a.bindPopup(popup_138edccff710327e6f151cbbb6103aaa)
+        ;
+
+        
+    
+    
+            var marker_ccf7e4a088cef1f6c98c687d5fe20355 = L.marker(
+                [40.8137182, -73.1121022],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03);
+        
+    
+        var popup_6a01f1e0fdb2c2c74eeba7b4afd5e542 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_8f8e2b0302aa157967d66047f6bc85b0 = $(`<div id="html_8f8e2b0302aa157967d66047f6bc85b0" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/team-extreme-lake-ronkonkoma-2?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Team Extreme</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 4.0 </p>         </div>`)[0];
+                popup_6a01f1e0fdb2c2c74eeba7b4afd5e542.setContent(html_8f8e2b0302aa157967d66047f6bc85b0);
+            
+        
+
+        marker_ccf7e4a088cef1f6c98c687d5fe20355.bindPopup(popup_6a01f1e0fdb2c2c74eeba7b4afd5e542)
+        ;
+
+        
+    
+    
+            var marker_d4e35c79ac94283c074445ed5b4bf068 = L.marker(
+                [40.84387094910903, -73.14474775718531],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03);
+        
+    
+        var popup_37ffb414658c10701e7f4b6d3498aae0 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_0669e86235ccf2a78b1824279784fd24 = $(`<div id="html_0669e86235ccf2a78b1824279784fd24" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/maria-costello-fitness-long-island?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Maria Costello Fitness</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 4.5 </p>         </div>`)[0];
+                popup_37ffb414658c10701e7f4b6d3498aae0.setContent(html_0669e86235ccf2a78b1824279784fd24);
+            
+        
+
+        marker_d4e35c79ac94283c074445ed5b4bf068.bindPopup(popup_37ffb414658c10701e7f4b6d3498aae0)
+        ;
+
+        
+    
+    
+            var marker_ede82657901a023f29ddaeca42843aab = L.marker(
+                [40.84573, -73.16861],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03);
+        
+    
+        var popup_a2afe855516c322c29995095822cfb3c = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_b31dd483e41636f6cc14020ad512d217 = $(`<div id="html_b31dd483e41636f6cc14020ad512d217" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/rebel-thaiboxing-smithtown?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Rebel Thaiboxing</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 4.0 </p>         </div>`)[0];
+                popup_a2afe855516c322c29995095822cfb3c.setContent(html_b31dd483e41636f6cc14020ad512d217);
+            
+        
+
+        marker_ede82657901a023f29ddaeca42843aab.bindPopup(popup_a2afe855516c322c29995095822cfb3c)
+        ;
+
+        
+    
+    
+            var marker_cluster_777cca8f5ad13e8a5f20fb910a303096 = L.markerClusterGroup(
+                {}
+            );
+            map_6eb413887479fbcb7dfb12945b7431fb.addLayer(marker_cluster_777cca8f5ad13e8a5f20fb910a303096);
+        
+    
+            var marker_15455eef6e34a011b2524658e3093efb = L.marker(
+                [40.860725, -73.124954],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_777cca8f5ad13e8a5f20fb910a303096);
+        
+    
+        var popup_ea7821968b902602feb1a29d1641e507 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_6c43dab2183fd8aea717f3ae56c840a9 = $(`<div id="html_6c43dab2183fd8aea717f3ae56c840a9" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/crunch-fitness-lake-grove-lake-grove-2?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Crunch Fitness - Lake Grove</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 3.5 </p>         </div>`)[0];
+                popup_ea7821968b902602feb1a29d1641e507.setContent(html_6c43dab2183fd8aea717f3ae56c840a9);
+            
+        
+
+        marker_15455eef6e34a011b2524658e3093efb.bindPopup(popup_ea7821968b902602feb1a29d1641e507)
+        ;
+
+        
+    
+    
+            var marker_e43a7281a7dcfabce133079008588047 = L.marker(
+                [40.858123, -73.195836],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_777cca8f5ad13e8a5f20fb910a303096);
+        
+    
+        var popup_25c24b3b2732352b33621a3682026311 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_e686df2c928697a2bbbc27e4b1ac1e43 = $(`<div id="html_e686df2c928697a2bbbc27e4b1ac1e43" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/golds-gym-smithtown?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Gold's Gym</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 3.5 </p>         </div>`)[0];
+                popup_25c24b3b2732352b33621a3682026311.setContent(html_e686df2c928697a2bbbc27e4b1ac1e43);
+            
+        
+
+        marker_e43a7281a7dcfabce133079008588047.bindPopup(popup_25c24b3b2732352b33621a3682026311)
+        ;
+
+        
+    
+    
+            var marker_32b63079ea809d5e31b397101aa49df3 = L.marker(
+                [40.87317384871308, -73.12622211900815],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_777cca8f5ad13e8a5f20fb910a303096);
+        
+    
+        var popup_fbb28f27eba0b48b0f67261f9b62325d = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_332e770afab89eca325aec69e189ea4a = $(`<div id="html_332e770afab89eca325aec69e189ea4a" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/planet-fitness-stony-brook?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Planet Fitness</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 3.5 </p>         </div>`)[0];
+                popup_fbb28f27eba0b48b0f67261f9b62325d.setContent(html_332e770afab89eca325aec69e189ea4a);
+            
+        
+
+        marker_32b63079ea809d5e31b397101aa49df3.bindPopup(popup_fbb28f27eba0b48b0f67261f9b62325d)
+        ;
+
+        
+    
+    
+            var marker_f79f5dd6f11c43efe46f84cfd60913b6 = L.marker(
+                [40.876005, -73.169956],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_777cca8f5ad13e8a5f20fb910a303096);
+        
+    
+        var popup_b6704937f891d2d7e400a05893018ef9 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_eba5909e88d489797a804918410d6b9d = $(`<div id="html_eba5909e88d489797a804918410d6b9d" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/prana-pilates-and-yoga-saint-james?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">Prana Pilates And Yoga</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 3.0 </p>         </div>`)[0];
+                popup_b6704937f891d2d7e400a05893018ef9.setContent(html_eba5909e88d489797a804918410d6b9d);
+            
+        
+
+        marker_f79f5dd6f11c43efe46f84cfd60913b6.bindPopup(popup_b6704937f891d2d7e400a05893018ef9)
+        ;
+
+        
+    
+    
+            var marker_cluster_fba07f3c8ed15d1716cda8e779fd20ca = L.markerClusterGroup(
+                {}
+            );
+            map_6eb413887479fbcb7dfb12945b7431fb.addLayer(marker_cluster_fba07f3c8ed15d1716cda8e779fd20ca);
+        
+    
+            var marker_a5dd3bc19193ea6c7e0d5882ef706d5e = L.marker(
+                [40.869152570251934, -73.12569606078446],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_fba07f3c8ed15d1716cda8e779fd20ca);
+        
+    
+        var popup_51a430ae17aca8b0cb7ad6bf927eca5f = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_e9df04625529fc4aa5b12985d254e1a7 = $(`<div id="html_e9df04625529fc4aa5b12985d254e1a7" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/la-fitness-lake-grove-2?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">LA Fitness</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 2.5 </p>         </div>`)[0];
+                popup_51a430ae17aca8b0cb7ad6bf927eca5f.setContent(html_e9df04625529fc4aa5b12985d254e1a7);
+            
+        
+
+        marker_a5dd3bc19193ea6c7e0d5882ef706d5e.bindPopup(popup_51a430ae17aca8b0cb7ad6bf927eca5f)
+        ;
+
+        
+    
+    
+            var marker_26beb6aa93a900b037c911d1e0c4259d = L.marker(
+                [40.8560393750668, -73.1888184696436],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_fba07f3c8ed15d1716cda8e779fd20ca);
+        
+    
+        var popup_4a658ccf2d4fe05cc39268377fe58846 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_16a1456fd0906d9a8dbb8e5bcc56df12 = $(`<div id="html_16a1456fd0906d9a8dbb8e5bcc56df12" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/la-fitness-smithtown?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">LA Fitness</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 2.0 </p>         </div>`)[0];
+                popup_4a658ccf2d4fe05cc39268377fe58846.setContent(html_16a1456fd0906d9a8dbb8e5bcc56df12);
+            
+        
+
+        marker_26beb6aa93a900b037c911d1e0c4259d.bindPopup(popup_4a658ccf2d4fe05cc39268377fe58846)
+        ;
+
+        
+    
+    
+            var marker_246142dd1d373aa0c143382342c94222 = L.marker(
+                [40.859218, -73.154602],
+                {"fill": true, "fillColor": "b", "fillOpacity": 0.7, "radius": 10}
+            ).addTo(marker_cluster_fba07f3c8ed15d1716cda8e779fd20ca);
+        
+    
+        var popup_9fadb59dd156118f31814237cbed7fd4 = L.popup({"maxWidth": 500});
+
+        
+            
+                var html_3bcee2074571c5e69df7c28964a80e60 = $(`<div id="html_3bcee2074571c5e69df7c28964a80e60" style="width: 100.0%; height: 100.0%;">         <p style="font-size: 14px;"> <b> Gym: </b>  <a href="https://www.yelp.com/biz/new-york-sports-clubs-nesconset-2?adjust_creative=DTkS_rDU0QQYgdcLh64stw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DTkS_rDU0QQYgdcLh64stw">New York Sports Clubs</a> </p>         <p style="font-size: 14px;"> <b> Rating: </b> 2.5 </p>         </div>`)[0];
+                popup_9fadb59dd156118f31814237cbed7fd4.setContent(html_3bcee2074571c5e69df7c28964a80e60);
+            
+        
+
+        marker_246142dd1d373aa0c143382342c94222.bindPopup(popup_9fadb59dd156118f31814237cbed7fd4)
+        ;
+
+        
+    
+    
+            var marker_cluster_96618328c6b1d7f5ca81c5792b097fff = L.markerClusterGroup(
+                {}
+            );
+            map_6eb413887479fbcb7dfb12945b7431fb.addLayer(marker_cluster_96618328c6b1d7f5ca81c5792b097fff);
+        
+    
+            var layer_control_db6a956ecb00627a63263e26463bfffb = {
+                base_layers : {
+                    "\u003cb style=\"font-size: 14px;\"\u003e Customer Rating: \u003c/b\u003e " : tile_layer_f22a0abb454785f85dd735538f16b1f9,
+                },
+                overlays :  {
+                    "\u003cb style=\"font-size: 14px\"\u003e \u0026#9733 \u0026#9733 \u0026#9733 \u0026#9733 \u0026#9733 \u003c/b\u003e " : marker_cluster_c7f2dcd9edd447e9f2ef55793ea8844b,
+                    "\u003cb style=\"font-size: 14px;\"\u003e \u0026#9733 \u0026#9733 \u0026#9733 \u0026#9733 \u0026#9734 \u003c/b\u003e " : marker_cluster_744cf9fe1da1d9a7c7a99f3d8680eb03,
+                    "\u003cb style=\"font-size: 14px;\"\u003e \u0026#9733 \u0026#9733 \u0026#9733 \u0026#9734 \u0026#9734 \u003c/b\u003e " : marker_cluster_777cca8f5ad13e8a5f20fb910a303096,
+                    "\u003cb style=\"font-size: 14px;\"\u003e \u0026#9733 \u0026#9733 \u0026#9734 \u0026#9734 \u0026#9734 \u003c/b\u003e " : marker_cluster_fba07f3c8ed15d1716cda8e779fd20ca,
+                    "\u003cb style=\"font-size: 14px;\"\u003e \u0026#9733 \u0026#9734 \u0026#9734 \u0026#9734 \u0026#9734 \u003c/b\u003e " : marker_cluster_96618328c6b1d7f5ca81c5792b097fff,
+                },
+            };
+            L.control.layers(
+                layer_control_db6a956ecb00627a63263e26463bfffb.base_layers,
+                layer_control_db6a956ecb00627a63263e26463bfffb.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_6eb413887479fbcb7dfb12945b7431fb);
+        
+</script>
+</html>
