@@ -17,3 +17,4 @@ tzdata==2023.3
 Werkzeug==2.0.3
 requests==2.28.2
 altair==5.0.1
+folium==0.14.0
