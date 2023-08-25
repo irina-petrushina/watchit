@@ -14,7 +14,7 @@ The web app is using an amazing template Swipe Bootstrap 5 by Themesberg.
 
 > Links
 
-- [LIVE Demo](https://jinja-swipe-bootstrap-5.appseed-srv1.com/) - deployed website.
+- [LIVE Demo](https://watchit-934o.onrender.com/) - deployed website.
 
 <br />
 
