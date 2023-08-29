@@ -15,7 +15,9 @@
             <div class="row justify-content-center">
                <div class="col-12 col-md-10 text-center mb-5 mb-md-7">
                     <h2 class="h1 mb-4"> Your HealthScore:</h2>
-		    <h1 class="h1 mb-4"> 33 (Poor)</h1>
+		    <h1 class="h1 mb-4">
+				{{data[0]}}
+				</h1>
 			<details>
     			<summary style="font-size : 20px;"><!--&#9432;--> How is it calculated?</summary>
 				<div class="col-12 text-center">
@@ -57,27 +59,27 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
 	<div class="d-flex justify-content-center">
-	<img class="d-block w-75" src="/static/assets/img/medical.png" alt="First slide">    
+	<img class="d-block w-75" src="/static/assets/img/user_medical_average.png" alt="First slide">    
    	</div>
     </div>
     <div class="carousel-item">
 	<div class="d-flex justify-content-center">
-   	<img class="d-block w-75" src="/static/assets/img/population.png" alt="Seconds slide">
+   	<img class="d-block w-75" src="/static/assets/img/user_demo_average.png" alt="Seconds slide">
 	</div>
     </div>
     <div class="carousel-item">
 	<div class="d-flex justify-content-center">
-    	<img class="d-block w-75" src="/static/assets/img/Baseball.png" alt="Third slide">
+    	<img class="d-block w-75" src="/static/assets/img/user_baseball.png" alt="Third slide">
 	</div>
     </div>
     <div class="carousel-item">
 	<div class="d-flex justify-content-center">
-        <img class="d-block w-75" src="/static/assets/img/Basketball.png" alt="Fourth slide">
+        <img class="d-block w-75" src="/static/assets/img/user_basketball.png" alt="Fourth slide">
     	</div>
     </div>
     <div class="carousel-item">
 	<div class="d-flex justify-content-center">
-        <img class="d-block w-75" src="/static/assets/img/Track & Field - Running.png" alt="Fifth slide">
+        <img class="d-block w-75" src="/static/assets/img/user_track & field - running.png" alt="Fifth slide">
     	</div>
      </div>
   </div>
@@ -94,7 +96,7 @@
 </div>
 
 <script>
-var spec = "/static/assets/img/healthscore.json";
+var spec = "/static/assets/img/user_healthscore.json";
 vegaEmbed("#vis_bar", spec);
 </script>
 
@@ -108,7 +110,7 @@ vegaEmbed("#vis_bar", spec);
             <div class="row justify-content-center">
                <div class="col-12 col-md-10 text-center mb-5 mb-md-7">
                     <h2 class="h1 mb-4"> Your SleepScore:</h2>
-		    <h1 class="h1 mb-4"> 7.2 (Good)</h1>
+		    <h1 class="h1 mb-4"> {{data[1]}}</h1>
 			<details>
     			<summary style="font-size : 20px;"><!--&#9432;--> How is it calculated?</summary>
 				<div class="col-12 text-center">
@@ -130,7 +132,7 @@ vegaEmbed("#vis_bar", spec);
    
 
 <script>
-var spec = "/static/assets/img/sleepscore.json";
+var spec = "/static/assets/img/user_sleepscore.json";
 	vegaEmbed("#sleep_bar", spec);
 </script>
 
@@ -153,7 +155,7 @@ var spec = "/static/assets/img/sleepscore.json";
     </section>
 
 <script>
-var spec = "/static/assets/img/sleep_july_23.json";
+var spec = "/static/assets/img/user_sleep_trend.json";
 vegaEmbed("#vis", spec);
 </script>
 
@@ -209,7 +211,7 @@ vegaEmbed("#vis", spec);
                 <h4><b>Irina Petrushina</b><h4>
                 <h4><b>Email:</b> irina.petrushina@mg.thedataincubator.com</h4>
                 <h4><b>GitHub:</b> https://github.com/irina-petrushina/watchit </h4>
-                <h4><b>Website:</b> https://watchit-934o.onrender.com </h4>
+                <h4><b>Website:</b> https://watchit-934o.onrender.com  </h4>
                 </div>
                 <div class="col">
                     <img class="d-none d-lg-inline-block" src="/static/assets/img/watch_yoga.png" alt="Mobile App Illustration">

@@ -13,7 +13,7 @@ from app import app
 # WatchIt modules
 from app import get_yelp
 from app import watch_data_analysis
-#from app import get_medical
+from app import get_medical, get_demo, plot_sleep
 
 ALLOWED_EXTENSIONS = {'xml'}
 
@@ -79,8 +79,8 @@ def get_watch_data():
 # Analyzing uploaded data
 @app.route('/analyze')
 def analyze_watch_data():
-	#user_data = watch_data_analysis.watch_data_analysis('user_watch_data.xml')
-	#print(user_data)
-	#medical_data = get_medical.get_medical(user_data['user_age'], user_data['user_gender'])
-	#print(medical_data)
-	return render_template('/result_preview.html')
+	user_data = watch_data_analysis.watch_data_analysis('user_watch_data.xml')
+	medical_data = get_medical.get_medical(user_data['user_age'], user_data['user_gender'], user_data['user_healthscore'], user_data['user_sleepscore'])
+	demo_data =  get_demo.get_demo(user_data['user_age'], user_data['user_gender'], user_data['user_healthscore'])
+	plot_sleep.plot_sleep(user_data['user_sleep'], demo_data, medical_data)
+	return render_template('/user_result_preview.html', data = [str(user_data['user_healthscore'])+' ('+medical_data['vo2max']+')', str(user_data['user_sleepscore']) + ' (' + medical_data['sleep_tag']+')'])

@@ -87,5 +87,16 @@ def watch_data_analysis(filename):
 	user_data['user_gender'] = get_gender(demo_tree)
 	user_data['user_sleep'] = get_sleep(data)
 	user_data['user_vo2max'] = get_vo2max(data)
+	if len(user_data['user_vo2max'])>14:
+		window = 14
+	else:
+		window = len(user_data['user_vo2max'])
+	user_data['user_healthscore'] = round(user_data['user_vo2max']['value'].rolling(window).mean().iloc[-1])
+ 
+	if len(user_data['user_sleep'])>14:
+		window = 14
+	else:
+		window = len(user_data['user_sleep'])
+	user_data['user_sleepscore'] = round(user_data['user_sleep'].rolling(window).mean()[-1],1)
 
 	return user_data
