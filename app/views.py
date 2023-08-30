@@ -53,7 +53,7 @@ def get_zip():
 	zip = request.form.get('zip')
 	yelp_request = get_yelp.get_yelp({'user_zip': zip,'health_metric':'both'})
 	if yelp_request:
-		return render_template('/map_preview.html')
+		return render_template('/map_preview.html', map = yelp_request)
 	else:
 		return render_template('/map_notfound.html')
 

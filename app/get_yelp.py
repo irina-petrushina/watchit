@@ -91,5 +91,5 @@ def get_yelp(data):
 		folium.LayerControl(collapsed = False).add_to(fit_map);
 		    
 		#print(glob.glob("app/static/assets/img/*.*"))
-		fit_map.save("app/static/assets/img/fit_map.html")
-		return True	
+		#fit_map.save("app/static/assets/img/fit_map.html")
+		return fit_map.get_root()._repr_html_()	
