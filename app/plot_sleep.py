@@ -80,4 +80,4 @@ def plot_sleep(user, demo, medical_data):
 	alt.Color('variable:N', scale=scale, legend=alt.Legend(title=None, labelFontSize=18)),\
 	opacity=alt.condition(selection, alt.value(1), alt.value(0)),\
 	)
-	(medical_band+population_band+population_line+medical_line+your_data+rolling_average).add_params(selection).properties(width=900, height=400).configure_axis(labelFontSize=20,titleFontSize=20).add_params(brush).save('app/static/assets/img/user_sleep_trend.json')
+	return (medical_band+population_band+population_line+medical_line+your_data+rolling_average).add_params(selection).properties(width=900, height=400).configure_axis(labelFontSize=20,titleFontSize=20).add_params(brush).to_json()

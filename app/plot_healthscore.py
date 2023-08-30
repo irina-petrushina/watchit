@@ -12,7 +12,8 @@ def plot_healthscore_bar(med_score, user_healthscore):
 
 	text = alt.Chart(source).encode(x=alt.X('x'),y=alt.Y('y'),color = alt.Color('b', legend=None).scale(scheme=sch),text=alt.Text('label'))
 
-	plot = (base.mark_bar(cornerRadiusTopLeft=20,cornerRadiusTopRight=20,cornerRadiusBottomLeft=20,cornerRadiusBottomRight=20,width = 100) + base.mark_text(align='center', dx=0, dy = -15, fontSize=40) + text.mark_text(dy = -15, fontSize=fs)).configure_view(strokeWidth=0).configure_scale(bandPaddingInner=0).properties(width=500, height=400).save('app/static/assets/img/user_medical_average.png', scale_factor=5.0)
+	plot = (base.mark_bar(cornerRadiusTopLeft=20,cornerRadiusTopRight=20,cornerRadiusBottomLeft=20,cornerRadiusBottomRight=20,width = 100) + base.mark_text(align='center', dx=0, dy = -15, fontSize=40) + text.mark_text(dy = -15, fontSize=fs)).configure_view(strokeWidth=0).configure_scale(bandPaddingInner=0).properties(width=500, height=400).to_json()
+	return plot
 
 def plot_healthscore(df, user_healthscore):
 	"""This function plots the medical ranges and indicates which range the user's score falls into"""
@@ -25,7 +26,7 @@ def plot_healthscore(df, user_healthscore):
 	df_plot['y'] = 1
 	med_score = df_plot[df_plot['HealthScore Range']=='Good']['HealthScoreAbsolute'].iloc[0]
 	
-	plot_healthscore_bar(med_score, user_healthscore)
+	healthscore_bar = plot_healthscore_bar(med_score, user_healthscore)
 
 	user_df = pd.DataFrame({'x': [user_healthscore, user_healthscore], 'y': [0, 30]})
 	user_label = pd.DataFrame({'x': [user_healthscore], 'y': [30]})
@@ -50,4 +51,7 @@ def plot_healthscore(df, user_healthscore):
 	text = alt.Chart(user_label).mark_text(dy = -15, color="black", fontSize=fs).encode(x=alt.X('x'),y=alt.Y('y'),text=alt.Text('x'))
 
 
-	(base1 + base2 + base3 + base4 + base5 + base6 + text).properties(width=800, height=health_width+30).configure_view(strokeWidth=0).configure_axis(labelFontSize=fs,titleFontSize=fs).save('app/static/assets/img/user_healthscore.json')
+	plot = (base1 + base2 + base3 + base4 + base5 + base6 + text).properties(width=800, height=health_width+30).configure_view(strokeWidth=0).configure_axis(labelFontSize=fs,titleFontSize=fs).to_json()
+	return [plot, healthscore_bar]
+	#(base1 + base2 + base3 + base4 + base5 + base6 + text).properties(width=800, height=health_width+30).configure_view(strokeWidth=0).configure_axis(labelFontSize=fs,titleFontSize=fs).save('app/static/assets/img/user_healthscore.json')
+	#(base1 + base2 + base3 + base4 + base5 + base6 + text).properties(width=800, height=health_width+30).configure_view(strokeWidth=0).configure_axis(labelFontSize=fs,titleFontSize=fs).save('app/static/assets/img/user_healthscore.json')

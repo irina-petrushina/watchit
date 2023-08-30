@@ -14,7 +14,9 @@ def plot_demo_bar(med_score, user_healthscore):
 
 	text = alt.Chart(source).encode(x=alt.X('x'),y=alt.Y('y'),color = alt.Color('b', legend=None).scale(scheme=sch),text=alt.Text('label'))
 
-	plot = (base.mark_bar(cornerRadiusTopLeft=20,cornerRadiusTopRight=20,cornerRadiusBottomLeft=20,cornerRadiusBottomRight=20,width = 100) + base.mark_text(align='center', dx=0, dy = -15, fontSize=40) + text.mark_text(dy = -15, fontSize=fs)).configure_view(strokeWidth=0).configure_scale(bandPaddingInner=0).properties(width=500, height=400).save('app/static/assets/img/user_demo_average.png', scale_factor=5.0)
+	plot = (base.mark_bar(cornerRadiusTopLeft=20,cornerRadiusTopRight=20,cornerRadiusBottomLeft=20,cornerRadiusBottomRight=20,width = 100) + base.mark_text(align='center', dx=0, dy = -15, fontSize=40) + text.mark_text(dy = -15, fontSize=fs)).configure_view(strokeWidth=0).configure_scale(bandPaddingInner=0).properties(width=500, height=400).to_json()
+	
+	return plot
 
 def get_demo_sleep(age, gender, score):
 	df = pd.read_csv('app/raw_data/demo_sleep.csv').astype('int32')
@@ -27,7 +29,7 @@ def get_demo_vo2max(age, gender, score):
 	user_demo = df[(df['age_low']<=age) & (df['age_high']>=age) & (df['gender']==gender)] 	
 	demo_vo2max = {'vo2max_avg': user_demo['vo2max'].mean(), 'vo2max_min':user_demo['vo2max'].mean()-user_demo['vo2max'].std(), 'vo2max_max':user_demo['vo2max'].mean()+user_demo['vo2max'].std()}
 	
-	plot_demo_bar(int(demo_vo2max['vo2max_avg']), score)
+	demo_vo2max['bar_plot'] = plot_demo_bar(int(demo_vo2max['vo2max_avg']), score)
 	
 	return demo_vo2max
 	
@@ -40,6 +42,9 @@ def get_athlete(age, gender, user_healthscore):
 
 	sch = 'plasma'
 	fs = 30	
+	
+	athlete_plots = []	
+
 	for idx, sport in enumerate(sports):
 		if gender == 0:
 			col = 'Female'
@@ -63,12 +68,14 @@ def get_athlete(age, gender, user_healthscore):
 
 		text = alt.Chart(source).encode(x=alt.X('x'),y=alt.Y('y'),color = alt.Color('b', legend=None).scale(scheme=sch),text=alt.Text('label'))
 
-		plot = (base.mark_bar(cornerRadiusTopLeft=20,cornerRadiusTopRight=20,cornerRadiusBottomLeft=20,cornerRadiusBottomRight=20,width = 100) + base.mark_text(align='center', dx=0, dy = -15, fontSize=40) + text.mark_text(dy = -15, fontSize=fs)).configure_view(strokeWidth=0).configure_scale(bandPaddingInner=0).properties(width=500, height=400).save('app/static/assets/img/user_'+sport.lower()+'.png', scale_factor=5.0)
+		plot = (base.mark_bar(cornerRadiusTopLeft=20,cornerRadiusTopRight=20,cornerRadiusBottomLeft=20,cornerRadiusBottomRight=20,width = 100) + base.mark_text(align='center', dx=0, dy = -15, fontSize=40) + text.mark_text(dy = -15, fontSize=fs)).configure_view(strokeWidth=0).configure_scale(bandPaddingInner=0).properties(width=500, height=400).to_json()
+		athlete_plots.append(plot)
+	return athlete_plots
 
 def get_demo(age, gender, user_healthscore):
 	
 	demo = dict()
-	get_athlete(age, gender, user_healthscore)
+	demo['athlete_plots'] = get_athlete(age, gender, user_healthscore)
 	demo['sleep'] = get_demo_sleep(age, gender, user_healthscore)
 	demo['health'] = get_demo_vo2max(age, gender, user_healthscore)
 	

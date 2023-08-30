@@ -15,6 +15,8 @@ from app import get_yelp
 from app import watch_data_analysis
 from app import get_medical, get_demo, plot_sleep
 
+import xml.etree.ElementTree as ET
+
 ALLOWED_EXTENSIONS = {'xml'}
 
 # App main route + generic routing
@@ -66,9 +68,17 @@ def allowed_file(filename):
 def get_watch_data():
 	uploaded_file = request.files['file']
 	if uploaded_file.filename != '' and allowed_file(uploaded_file.filename):
-		uploaded_file.save('user_watch_data.xml')
 		flash("Upload succesful!")
-		return redirect(url_for("index")+"#tryitnow") 
+		user_data = watch_data_analysis.watch_data_analysis(uploaded_file)
+		medical_data = get_medical.get_medical(user_data['user_age'], user_data['user_gender'], user_data['user_healthscore'], user_data['user_sleepscore'])
+		demo_data =  get_demo.get_demo(user_data['user_age'], user_data['user_gender'], user_data['user_healthscore'])
+		sleep_trend = plot_sleep.plot_sleep(user_data['user_sleep'], demo_data, medical_data)
+		health_status = str(user_data['user_healthscore'])+' ('+medical_data['vo2max'][0]+')'
+		sleep_status = str(user_data['user_sleepscore']) + ' (' + medical_data['sleep_tag']+')'
+		health_range_plot = medical_data['vo2max'][1][0]
+		sleep_range_plot = medical_data['plot']
+		carousel_plots = [medical_data['vo2max'][1][1]] + [demo_data['health']['bar_plot']] + demo_data['athlete_plots']
+		return render_template('/user_result_preview.html', data = [health_status, sleep_status, health_range_plot, sleep_range_plot, sleep_trend], carousel_data = carousel_plots)
 	elif not allowed_file(uploaded_file.filename):
 		flash("Wrong file extension! Please upload an XML file.")
 		return redirect(url_for("index")+"#tryitnow")
@@ -77,10 +87,10 @@ def get_watch_data():
 		return redirect(url_for("index")+"#tryitnow")
 
 # Analyzing uploaded data
-@app.route('/analyze')
-def analyze_watch_data():
-	user_data = watch_data_analysis.watch_data_analysis('user_watch_data.xml')
-	medical_data = get_medical.get_medical(user_data['user_age'], user_data['user_gender'], user_data['user_healthscore'], user_data['user_sleepscore'])
-	demo_data =  get_demo.get_demo(user_data['user_age'], user_data['user_gender'], user_data['user_healthscore'])
-	plot_sleep.plot_sleep(user_data['user_sleep'], demo_data, medical_data)
-	return render_template('/user_result_preview.html', data = [str(user_data['user_healthscore'])+' ('+medical_data['vo2max']+')', str(user_data['user_sleepscore']) + ' (' + medical_data['sleep_tag']+')'])
+#@app.route('/analyze')
+#def analyze_watch_data():
+#	user_data = watch_data_analysis.watch_data_analysis('user_watch_data.xml')
+#	medical_data = get_medical.get_medical(user_data['user_age'], user_data['user_gender'], user_data['user_healthscore'], user_data['user_sleepscore'])
+#	demo_data =  get_demo.get_demo(user_data['user_age'], user_data['user_gender'], user_data['user_healthscore'])
+#	plot_sleep.plot_sleep(user_data['user_sleep'], demo_data, medical_data)
+#	return render_template('/user_result_preview.html', data = [str(user_data['user_healthscore'])+' ('+medical_data['vo2max']+')', str(user_data['user_sleepscore']) + ' (' + medical_data['sleep_tag']+')'])

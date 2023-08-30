@@ -220,19 +220,21 @@
 					</label>
 					<form method="POST" action="/get_watch_data" enctype="multipart/form-data">
      					 <p><input type="file" name="file"></p>
-     					 <p><input type="submit" value="Submit"></p>
+     					 <p><input type="submit", class= "btn btn-block btn-primary" style="font-size : 20px" value="Submit & Analyze"></p>
    					 </form>
                                     </div>
 					{% with messages = get_flashed_messages() %}
    					{% if messages %}
       					{% for message in messages %}
-        				{{ message }}
+        				<div class="alert alert-warning">
+					{{ message }}
+					</div>
      					{% endfor %}
   					{% endif %}
 					{% endwith %}
-				<form action = "/analyze">
+				<!--<form action = "/analyze">
 				<button type = 'submit' class="btn btn-block btn-primary" style="font-size : 20px;"> Analyze! </button>
-				</form>
+				</form>-->
                             </div>
                         </div>
 			<div class="text-center text-md-center mb-4 mt-md-0">

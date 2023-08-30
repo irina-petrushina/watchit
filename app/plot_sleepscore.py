@@ -23,4 +23,5 @@ def plot_sleepscore(sleep_range, user_score):
 	text = alt.Chart(user_label).mark_text(dy = -15, color="black", fontSize=fs).encode(x=alt.X('x'),y=alt.Y('y'),text=alt.Text('x'))
 
 
-	(base1 + base2 + base3 + text).properties(width=800, height=health_width+30).configure_view(strokeWidth=0).configure_axis(labelFontSize=fs,titleFontSize=fs).save('app/static/assets/img/user_sleepscore.json')
+	return (base1 + base2 + base3 + text).properties(width=800, height=health_width+30).configure_view(strokeWidth=0).configure_axis(labelFontSize=fs,titleFontSize=fs).to_json()
+	#(base1 + base2 + base3 + text).properties(width=800, height=health_width+30).configure_view(strokeWidth=0).configure_axis(labelFontSize=fs,titleFontSize=fs).save('app/static/assets/img/user_sleepscore.json')

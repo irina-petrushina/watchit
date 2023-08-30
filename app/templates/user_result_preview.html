@@ -59,27 +59,32 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
 	<div class="d-flex justify-content-center">
-	<img class="d-block w-75" src="/static/assets/img/user_medical_average.png" alt="First slide">    
+	<div id='car1'></div>
+	<!--	<img class="d-block w-75" src="/static/assets/img/user_medical_average.png" alt="First slide"> -->   
    	</div>
     </div>
     <div class="carousel-item">
 	<div class="d-flex justify-content-center">
-   	<img class="d-block w-75" src="/static/assets/img/user_demo_average.png" alt="Seconds slide">
+	<div id = 'car2'></div>
+   	<!--<img class="d-block w-75" src="/static/assets/img/user_demo_average.png" alt="Seconds slide">-->
 	</div>
     </div>
     <div class="carousel-item">
 	<div class="d-flex justify-content-center">
-    	<img class="d-block w-75" src="/static/assets/img/user_baseball.png" alt="Third slide">
+    <!--	<img class="d-block w-75" src="/static/assets/img/user_baseball.png" alt="Third slide">-->
+	<div id = 'car3'></div>
 	</div>
     </div>
     <div class="carousel-item">
 	<div class="d-flex justify-content-center">
-        <img class="d-block w-75" src="/static/assets/img/user_basketball.png" alt="Fourth slide">
+        <!--<img class="d-block w-75" src="/static/assets/img/user_basketball.png" alt="Fourth slide">-->
+	<div id = 'car4'></div>
     	</div>
     </div>
     <div class="carousel-item">
 	<div class="d-flex justify-content-center">
-        <img class="d-block w-75" src="/static/assets/img/user_track & field - running.png" alt="Fifth slide">
+    <!--    <img class="d-block w-75" src="/static/assets/img/user_track & field - running.png" alt="Fifth slide">-->
+	<div id = 'car5'></div>
     	</div>
      </div>
   </div>
@@ -96,8 +101,31 @@
 </div>
 
 <script>
-var spec = "/static/assets/img/user_healthscore.json";
+var spec = {{data[2] | safe}};
 vegaEmbed("#vis_bar", spec);
+</script>
+
+
+
+<script>
+var spec = {{carousel_data[0] | safe}};
+vegaEmbed("#car1", spec);
+</script>
+<script>
+var spec = {{carousel_data[1] | safe}};
+vegaEmbed("#car2", spec);
+</script>
+<script>
+var spec = {{carousel_data[2] | safe}};
+vegaEmbed("#car3", spec);
+</script>
+<script>
+var spec = {{carousel_data[3] | safe}};
+vegaEmbed("#car4", spec);
+</script>
+<script>
+var spec = {{carousel_data[4] | safe}};
+vegaEmbed("#car5", spec);
 </script>
 
 <br></br>
@@ -132,7 +160,8 @@ vegaEmbed("#vis_bar", spec);
    
 
 <script>
-var spec = "/static/assets/img/user_sleepscore.json";
+<!--var spec = "/static/assets/img/user_sleepscore.json";-->
+	var spec = {{data[3] | safe}}
 	vegaEmbed("#sleep_bar", spec);
 </script>
 
@@ -155,7 +184,7 @@ var spec = "/static/assets/img/user_sleepscore.json";
     </section>
 
 <script>
-var spec = "/static/assets/img/user_sleep_trend.json";
+var spec = {{data[4] | safe}}
 vegaEmbed("#vis", spec);
 </script>
 
